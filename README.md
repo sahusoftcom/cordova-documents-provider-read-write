@@ -1,0 +1,1 @@
+# cordova-documentsproviders-read-write
