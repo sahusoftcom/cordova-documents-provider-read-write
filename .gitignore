@@ -1,12 +1,15 @@
-*.class
+#If ignorance is bliss, then somebody knock the smile off my face
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+*.csproj.user
+*.suo
+*.cache
+Thumbs.db
+*.DS_Store
 
-# Package Files #
-*.jar
-*.war
-*.ear
+*.bak
+*.cache
+*.log
+*.swp
+*.user
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+node_modules
