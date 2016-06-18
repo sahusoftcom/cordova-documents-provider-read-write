@@ -1,0 +1,31 @@
+{
+  "name": "cordova-documents-provider-read-write",
+  "version": "1.0.0",
+  "description": "Cordova Plugin to support read/write on Internal, External and SD Card Storage - Supports Android 4.4+",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cordova": {
+    "id": "/cordova-documents-provider-read-write",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahusoftcom/cordova-documents-provider-read-write.git"
+  },
+  "keywords": [
+    "cordova",
+     "file",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "suraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahusoftcom/cordova-documents-provider-read-write/issues"
+  },
+  "homepage": "https://github.com/sahusoftcom/cordova-documents-provider-read-write#readme"
+}

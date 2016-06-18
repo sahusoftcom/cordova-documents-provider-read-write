@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="/cordova-documents-provider-read-write"
+        version="0.7.0">
+
+  <name>NativeDirectory</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/nativeDirectory.js" target="js/nativeDirectory.js"/>
+
+  <js-module src="www/nativeDirectory.js" name="nativeDirectory">
+    <clobbers target="nativeDirectory" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="NativeDirectory">
+        <param name="android-package" value="com.sahusoft.nativeDirectory.NativeDirectory"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+           <activity
+               android:name="com.sahusoft.nativeDirectory.FileChooserActivity"
+               android:screenOrientation="portrait"
+               android:exported="true"
+               android:label="@string/app_name">
+           </activity>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </config-file>
+
+    <source-file src="src/NativeDirectory.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/FileChooserActivity.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/FileUtil.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/FileInfo.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/Constants.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+
+    <source-file src="src/adapters/DirectoryAdapter.java" target-dir="src/com/sahusoft/nativeDirectory/adapters/"/>
+    <source-file src="src/adapters/FileArrayAdapter.java" target-dir="src/com/sahusoft/nativeDirectory/adapters/"/>
+    <source-file src="src/data/Category.java" target-dir="src/com/sahusoft/nativeDirectory/data/"/>
+    <source-file src="src/utils/Utils.java" target-dir="src/com/sahusoft/nativeDirectory/utils/"/>
+    
+    <source-file src="src/Downloader.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/FileDownloader.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+    <source-file src="src/StorageAccessFrameworkDownloader.java" target-dir="src/com/sahusoft/nativeDirectory/"/>
+
+
+
+<!--         <source-file src="src/libs/android-support-v4.jar" target-dir="libs/" />
+ -->
+        <!-- res files -->
+        <source-file src="src/res/drawable/divider_line_grey.png" target-dir="res/drawable" />
+        <source-file src="src/res/drawable/drawer_list_selector.xml" target-dir="res/drawable" />
+        <source-file src="src/res/drawable/drawer_shadow.9.png" target-dir="res/drawable" />
+    
+        <source-file src="src/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi" />
+        <source-file src="src/res/drawable-hdpi/ic_navigation_drawer.png" target-dir="res/drawable-hdpi" />
+        
+    <source-file src="src/res/drawable-mdpi/_blank.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/aac.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/apk.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/avi.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/back.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/blank.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/doc.png" target-dir="res/drawable-mdpi" />
+        
+    <source-file src="src/res/drawable-mdpi/folder.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/gif.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/ic_launcher.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/ic_navigation_drawer.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/jpg.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/mp3.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/mp4.png" target-dir="res/drawable-mdpi" />
+    
+    <source-file src="src/res/drawable-mdpi/odp.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/ods.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/odt.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/pdf.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/png.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/ppt.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/rar.png" target-dir="res/drawable-mdpi" />
+        
+    <source-file src="src/res/drawable-mdpi/rtf.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/txt.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/xls.png" target-dir="res/drawable-mdpi" />
+        <source-file src="src/res/drawable-mdpi/zip.png" target-dir="res/drawable-mdpi" />
+    
+    <source-file src="src/res/drawable-xhdpi/ic_launcher.png" target-dir="res/drawable-xhdpi" />
+        <source-file src="src/res/drawable-xhdpi/ic_navigation_drawer.png" target-dir="res/drawable-xhdpi" />
+    
+        <source-file src="src/res/drawable-xxhdpi/ic_launcher.png" target-dir="res/drawable-xxhdpi" />
+        <source-file src="src/res/drawable-xxhdpi/ic_navigation_drawer.png" target-dir="res/drawable-xxhdpi" />
+    
+        <source-file src="src/res/layout/drawer_list_item.xml" target-dir="res/layout" />
+        <source-file src="src/res/layout/file_row.xml" target-dir="res/layout" />
+        <source-file src="src/res/layout/main.xml" target-dir="res/layout" />
+
+        <source-file src="src/res/values/colors.xml" target-dir="res/values" />  
+        <source-file src="src/res/values/styles.xml" target-dir="res/values" />  
+        <source-file src="src/res/values-v11/styles.xml" target-dir="res/values-v11" />  
+        <source-file src="src/res/values-v14/styles.xml" target-dir="res/values-v14" />
+  
+  </platform>
+
+</plugin>
